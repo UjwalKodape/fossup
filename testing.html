@@ -1,0 +1,195 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Textarea Alert</title>
+    <style>
+        /* Optional:  Style the button a bit */
+        #myButton {
+            padding: 10px 20px;
+            background-color: #4CAF50; /* Green */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #myButton:hover {
+            background-color: #367c39; /* Darker green */
+        }
+    </style>
+</head>
+<body>
+
+    <button id="myButton">Show Alert with Textarea</button>
+
+    <script>
+        function showAlertWithTextarea() {
+            const textarea = document.createElement('textarea');
+            textarea.rows = 5;
+            textarea.cols = 30;
+
+            const alertDiv = document.createElement('div');
+            alertDiv.appendChild(textarea);
+
+            const okButton = document.createElement('button');
+            okButton.textContent = 'OK';
+            okButton.addEventListener('click', () => {
+                const text = textarea.value;
+                alert('You entered: ' + text);
+                document.body.removeChild(alertDiv);
+            });
+            alertDiv.appendChild(okButton);
+
+            alertDiv.style.position = 'fixed';
+            alertDiv.style.top = '50%';
+            alertDiv.style.left = '50%';
+            alertDiv.style.transform = 'translate(-50%, -50%)';
+            alertDiv.style.backgroundColor = 'white';
+            alertDiv.style.border = '1px solid black';
+            alertDiv.style.padding = '20px';
+            alertDiv.style.zIndex = '1000';
+
+            document.body.appendChild(alertDiv);
+        }
+
+        // Get the button element
+        const button = document.getElementById('myButton');
+        // Attach the event listener to the button
+        button.addEventListener('click', showAlertWithTextarea);
+    </script>
+</body>
+</html> -->
+
+<!-- ***************************************************************************************************************************************** -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+<title>Get Input</title>
+</head>
+<body>
+
+<button onclick="getInput('ayush')">Click me to enter text</button>
+
+
+<script>
+
+function getInput(msg) {
+  let person = prompt("Give your Comment :-", "Guest");
+  if (person != null && person != "") {
+    
+    window.location.href = "https://www.google.com/" + encodeURIComponent(person) + "/" + encodeURIComponent(msg);
+  }
+  else 
+  {
+    let url = "https://www.youtube.com/";
+    window.open(url, '_blank');           // Open in a new tab
+  }
+
+}
+
+</script>
+
+</body>
+</html> -->
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <title>Relocate Example</title>
+</head>
+<body>
+
+  <button onclick="goToNewPage()">Go to Example.com</button>
+
+  <script>
+    function goToNewPage() {
+      window.location.href = "https://www.example.com";
+    }
+  </script>
+
+</body>
+</html> -->
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comment Button</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script>
+        function getInput(id) {
+            // Your logic here.  For example:
+            console.log("Clicked comment button for ID:", id);
+            // You might want to get an input field related to this ID.
+            // Example (assuming there's an input with ID "input_" + id):
+            // var inputField = document.getElementById("input_" + id);
+            // if (inputField) {
+            //   var value = inputField.value;
+            //   console.log("Input value:", value);
+            //   // Do something with the value...
+            // } else {
+            //   console.warn("No input field found with ID: input_" + id);
+            // }
+        }
+    </script>
+    <style>
+      /* Basic styling for the button */
+      .comment-button {
+        background: none;
+        border: none;
+        padding: 0.5rem 1rem; /* Add padding for better touch area */
+        cursor: pointer;
+        display: inline-flex; /* Use inline-flex for better alignment */
+        align-items: center; /* Vertically center the icon and text */
+        gap: 0.5rem; /* Add some gap between icon and text */
+        transition: background-color 0.2s ease; /* Smooth transition for hover effect */
+        border-radius: 0.375rem; /* Rounded corners, same as Tailwind's rounded-md */
+      }
+
+      .comment-button:hover {
+        background-color: rgba(0, 0, 0, 0.05); /* Subtle background on hover, similar to Tailwind's hover:bg-black/5 */
+      }
+
+      .comment-icon {
+        font-size: 1.5rem; /* Larger icon, similar to your 30px */
+        margin-left: 0; /* Reset the margin, use gap instead */
+        color: #4b5563; /* text-gray-600 */
+      }
+
+      .comment-text {
+        font-size: 1rem; /* text-base */
+        color: #4b5563;
+      }
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border-width: 0;
+      }
+    </style>
+</head>
+<body>
+    <button id="commentButton_123" class="comment-button" onclick="getInput(123)" style="background-color: black;">
+        <i class="fa-solid fa-comment comment-icon"></i>
+        <span class="comment-text">Comment</span> <span class="sr-only">(123)</span>
+    </button>
+
+    <script>
+        //You can add more javascript here, if needed.
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+CREATE TABLE blogs (
+    id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    author_name VARCHAR(255),
+    date DATE,
+    caption VARCHAR(255),
+    description TEXT,
+    image_path VARCHAR(255),
+    status TINYINT(4) DEFAULT 0,
+    likes INT(11) DEFAULT 0,
+    dislikes INT(11) DEFAULT 0,
+    comments INT(11) DEFAULT 0,
+    views INT(11) DEFAULT 0,
+    u_id INT(11)
+);
+
+CREATE TABLE comments (
+    id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    comment VARCHAR(255) NOT NULL,
+    b_id VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE moderators (
+    id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    phone VARCHAR(15),
+    password VARCHAR(255) NOT NULL,
+    status TINYINT(4) DEFAULT 0
+);
+
+CREATE TABLE users (
+    u_id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(255) NOT NULL UNIQUE,
+    email VARCHAR(255) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    login_status TINYINT(1) DEFAULT 0,
+    account_status ENUM('active', 'inactive', 'suspended') DEFAULT 'active'
+);
+
+CREATE TABLE pagedata (
+    id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    phone_number VARCHAR(15),
+    address VARCHAR(255)
+);
+
